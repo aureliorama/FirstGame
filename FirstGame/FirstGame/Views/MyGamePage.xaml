@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FirstGame.Views.MyGamePage"
+             xmlns:vm="clr-namespace:FirstGame.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:MyGameViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+       
+
+    <Grid>
+        
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!--<StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                    <Image Source="xamarin_logo.png" VerticalOptions="Center" HeightRequest="64" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>-->
+        
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+                <Label FontSize="16" Padding="0,24,0,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Guess a number between 1 and 100"/>
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label Text="{Binding CheckEntryMessage}"/>
+                <Label Text="{Binding YourGuess}"/>
+
+                <Label Text="Past Guesses:" />
+                <ScrollView HeightRequest="125">                
+                    <ListView x:Name="PastGuesses" ItemsSource="{Binding PastGuesses}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                <Label x:Name="listItems" Text="{Binding}" HorizontalTextAlignment="Left"/>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </ScrollView>
+
+
+                <Grid>
+                    <Button Grid.Row="1" Grid.Column="0" Text="1" Command="{Binding UpdateNumber}" CommandParameter="1"/>
+                    <Button Margin="0,0,0,0" Grid.Row="1" Grid.Column="1" Text="2" Command="{Binding UpdateNumber}" CommandParameter="2"/>
+                    <Button Margin="0,0,0,0" Grid.Row="1" Grid.Column="2" Text="3" Command="{Binding UpdateNumber}" CommandParameter="3"/>
+                    <Button Margin="0,0,0,0" Grid.Row="2" Grid.Column="0" Text="4" Command="{Binding UpdateNumber}" CommandParameter="4"/>
+                    <Button Margin="0,0,0,0" Grid.Row="2" Grid.Column="1" Text="5" Command="{Binding UpdateNumber}" CommandParameter="5"/>
+                    <Button Margin="0,0,0,0" Grid.Row="2" Grid.Column="2" Text="6" Command="{Binding UpdateNumber}" CommandParameter="6"/>
+                    <Button Margin="0,0,0,0" Grid.Row="3" Grid.Column="0" Text="7" Command="{Binding UpdateNumber}" CommandParameter="7"/>
+                    <Button Margin="0,0,0,0" Grid.Row="3" Grid.Column="1" Text="8" Command="{Binding UpdateNumber}" CommandParameter="8"/>
+                    <Button Margin="0,0,0,0" Grid.Row="3" Grid.Column="2" Text="9" Command="{Binding UpdateNumber}" CommandParameter="9"/>
+                    <Button Margin="0,0,0,0" Grid.Row="4" Grid.Column="1" Text="0" Command="{Binding UpdateNumber}" CommandParameter="0"/>
+                    <Button Margin="0,0,0,0" Grid.Row="5" Grid.Column="2" Text="Delete" Command="{Binding DeleteEntry}"/>
+                    
+                    <Button Margin="0,0,0,0" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="Red" Text="Reset Game" Command="{Binding ResetGame}"/>
+
+                </Grid>
+                <Button Margin="0,10,0,0" Text="Submit"
+                        Command="{Binding CheckEntry}"
+                        BackgroundColor="Coral"
+                        TextColor="White" />
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>

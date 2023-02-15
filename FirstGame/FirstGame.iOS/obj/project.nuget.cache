@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "B0Od9QD9JA+sxeZdSTjfSJeMQPWaTLAI4x3FYtLK2oTuzz8KIVp+xsJ/HWQVT4tgTQcPnmKUKdCiZTROrnchZw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\AUREL\\source\\repos\\FirstGame\\FirstGame\\FirstGame.iOS\\FirstGame.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\AUREL\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\AUREL\\.nuget\\packages\\xamarin.essentials\\1.7.0\\xamarin.essentials.1.7.0.nupkg.sha512",
+    "C:\\Users\\AUREL\\.nuget\\packages\\xamarin.forms\\5.0.0.2196\\xamarin.forms.5.0.0.2196.nupkg.sha512"
+  ],
+  "logs": []
+}
